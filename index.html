@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App lista de tareas</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="imgs/favicon.png"/>
+
+    <!-- font-awesome -->
+    <!-- <link rel="stylesheet" href="fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.css"/> -->
+
+    <!-- bootstrap css-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+
+    <!-- mi css -->
+    <link rel="stylesheet" href="app-lista.css"/>
+
+</head>
+<body>
+
+    <div id="container">
+
+        <!-- buscador -->
+        <header class="mb-4">
+            <h2>Tareas pendientes</h2>
+            <form class="form-search">
+                <input type="search" id="search" class="form-control" name="search" placeholder="Busca una tarea..." autocomplete="off"/>
+            </form>
+        </header>
+
+
+
+
+        <!-- tareas -->
+        <section class="task mb-5">
+            <ul class="list-group">
+                <!-- agregamos aquí las tareas -->
+            </ul>
+        </section>
+
+
+
+
+        <!-- agregar tarea -->
+        <section>
+            <h5>Agrega aquí una tarea:</h5>
+            <form class="form-add">
+                <input type="text" id="add" class="form-control" name="add" placeholder="Enter para agregar..."/>
+            </form>
+        </section>
+
+    </div>
+
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/46a4bd0895.js" crossorigin="anonymous"></script>
+
+    <!-- Mi js -->
+    <script type="text/javascript" src="app-lista.js"></script>
+</body>
+</html>

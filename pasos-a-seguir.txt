@@ -1,0 +1,33 @@
+1. Creamos la plantilla y cargamos bootstrap y fontAwesome, además de nuestra hoja de estilos y script.
+2. Elaboramos la estructura y los estilos a gusto de cada uno.
+3. Añadimos tareas;
+    I- Con la función inicio() capturamos el formulario de añadir tareas y, con el evento submit, ponemos a la escucha
+        a la función añadirTareas().
+    II- En dicha función, capturamos el valor introducido por el usuario y llamamos a otra función, pero antes comprobamos que
+        el formulario no esté vacío.
+    III- En getPlantillaTareas(), la cual va a recibir un parámetro donde se va a almacenar la tarea introducida,
+        creamos una plantilla de html que se va a inyectar en nuestra web por cada tarea introducida.
+4. Borrar tareas;
+    I- Agregamos el addEventListener al hacer click a la lista, no al icono, ya que estaríamos creando un código estático,
+        es decir, los addEventListener ​de los iconos funcionarían solo sobre los iconos presentes en la página en el momento en el
+        que se carga, no al añadir una nueva tarea.
+    II- Ponemos a la escucha a eliminarTareas() en la cual, detectamos si el usuario ha hecho click en el icono de la papelera
+        usando la propiedad ​target ​del ​event object​​. De ser así, localizamos su parentElement, que es lo que queremos eliminar
+        (el <li>) y lo eliminamos.
+5. Buscar tareas;
+    I- Identificamos el input del buscador y creamos buscarTarea() en la cual, metemos dentro de una variable el valor a buscar.
+    II- Llamamos a la función compararTarea() la cual, recibe como parámetro el valor a buscar.
+    III- Dentro de esta función identificamos los li.
+    IV- Para comparar todos los li con el valor a buscar tenemos que convertir el HTMLCollection que nos devuelve por un array
+        para así, poder recorrerlos y, además, añadir el método filter() para que nos devuelva los li (los span concretamente)
+        correspondientes según el filtro establecido.
+    V- En el filtro que establecemos, indicamos que devuelva los li que no coincidan con la búsqueda del usuario.
+    VI- Además, le vamos a aplicar un forEach() para iterar uno a uno sobre ellos y aplicarle una clase de CSS
+        (llamada ocultarTarea) que luego creamos.
+    VII- Ahora hacemos lo contrario que el punto anterior, es decir, no incluir la clase ocultarTarea sobre los elementos
+        que coincidan con la búsqueda del usuario.
+    VIII- Creamos la clase en el css.
+    XIX- Por último, la clase d-flex de bootstrap tiene preferencia por contener un !important, por lo que por mucho que
+        le digamos a javascript que oculte cualquier elemento con la clase ocultarTarea, ​no lo hará. De esta forma, realizamos
+        el mismo procedimiento que con dicha clase. Además, para que coincidan o no todas las tareas, aplicamos el método
+        toLowerCase().
